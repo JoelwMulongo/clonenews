@@ -1,0 +1,65 @@
+name: Nightly Site Regeneration
+
+on:
+  schedule:
+    # Runs at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: 
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Somehow this affects the PAT as well. I'm not sure how. 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Environment Variables
+      run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+
+    - name: Test
+      run: |
+        ls -l
+        env
+        date > date.txt
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add date.txt
+        git commit -m "Update date"
+        git push --set-upstream https://${{ secrets.GH_TOKEN }}@github.com/joelwmulongo/clonenews.git main
+
+
+    - name: Run Script to Generate Content
+      run: bash scripts/script.sh
+
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Regenerate site" || echo "No changes to commit."
+        git push --set-upstream https://${{ secrets.GH_TOKEN }}@github.com/joelwmulongo/clonenews.git main
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: '.'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
