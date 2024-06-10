@@ -10,21 +10,21 @@ def generate_html(data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quacker News</title>
-    <link rel="icon" type="image/png" href="iconsmall.png">
-    <meta property="og:title" content="Quacker News">
-    <meta property="og:description" content="daily superautomated ai tech-bro mockery">
-    <meta property="og:image" content="https://quackernews.com/preview.png">
-    <meta property="og:url" content="https://quackernews.com/preview.png">
+    <title>Clone News</title>
+    <link rel="icon" type="image/jpg" href="joelmulongo.jpg">
+    <meta property="og:title" content="Clone News">
+    <meta property="og:description" content="daily superautomated ai ">
+    <meta property="og:image" content="https://user-images.githubusercontent.com/75514748/202913432-7548f8dc-295b-4503-b53d-94e25dd04297.jpg">
+    <meta property="og:url" content="https://user-images.githubusercontent.com/75514748/202913432-7548f8dc-295b-4503-b53d-94e25dd04297.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@d_feldman">
-    <meta name="twitter:title" content="Quacker News">
-    <meta name="twitter:description" content="daily superautomated ai tech-bro mockery">
-    <meta name="twitter:image" content="https://quackernews.com/preview.png">
+    <meta name="twitter:site" content="@mulongojoel">
+    <meta name="twitter:title" content="Clone News">
+    <meta name="twitter:description" content="daily superautomated ai ">
+    <meta name="twitter:image" content="https://user-images.githubusercontent.com/75514748/202913432-7548f8dc-295b-4503-b53d-94e25dd04297.jpg">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-    <link rel="icon" type="image/png" href="iconsmall.png">
+    <link rel="icon" type="image/jpg" href="joelmulongo.jpg">
     <style>
         body { font-family: Verdana, Geneva, sans-serif; font-size: 14pt; color: #828282; background-color: #f0e6ff; }
         td { font-family: Verdana, Geneva, sans-serif; font-size: 14pt; color: #828282; padding-right: 20px;}
@@ -56,12 +56,12 @@ def generate_html(data):
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px">
                         <tr>
                             <td style="width:18px;padding:2px; padding-left: 12px; padding-right: 12px;">
-                                <a href="#" style="color: white; text-decoration: none;"><img src="iconsmall.png" height="32" width="32"/></a>
+                                <a href="#" style="color: white; text-decoration: none;"><img src="joelmulongo.jpg" height="32" width="32"/></a>
                             </td>
                             <td style="line-height:12pt; height:10px;">
                                 <span class="pagetop" style="color: white;">
                                     <b class="hnname"><a href="#" style="color: white;">Clone News</a></b>
-                                    <span style="color: white;"><i>daily superautomated ai </i> | </span> <a href="http://github.com/joelwmulongo/clonenews" style="color: white;">github</a><span style="color:white;"> | </span> <a href=".scripts/index.html" style="color:white;">podcast</a>
+                                    <span style="color: white;"><i>daily superautomated ai </i> | </span> <a href="http://github.com/dfeldman/quackernews" style="color: white;">github</a><span style="color:white;"> | </span> <a href="https://s3.amazonaws.com/quackernewspodcast/index.html" style="color:white;">podcast</a>
                                 </span>
                             </td>
                         </tr>
@@ -143,7 +143,7 @@ def generate_history_html(history_files):
 </head>
 <body>
     <center>
-        <h1>News History</h1>
+        <h1>Clone News History</h1>
         <ul>
 '''
     for file in history_files:
