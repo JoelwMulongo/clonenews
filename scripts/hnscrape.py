@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 def fetch_url(url):
     try:
-        with urllib.request.urlopen(url) as response:
+    with urllib.request.urlopen(url) as response:
             return response.read()
     except:
         return None
