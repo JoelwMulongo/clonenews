@@ -3,7 +3,7 @@ name: Nightly Site Regeneration
 on:
   schedule:
     # Run
-    - cron: '5 10 * * *'
+    - cron: '26 10 * * *'
   workflow_dispatch: 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
