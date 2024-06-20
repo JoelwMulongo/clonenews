@@ -3,7 +3,7 @@ name: Site Regeneration
 on:
   schedule:
     # Run
-    - cron: '0 12 * * *'
+    - cron: '10 14 * * *'
   workflow_dispatch: 
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
